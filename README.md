@@ -6,3 +6,4 @@
 
 #### 1. 기본 알고리즘
  * 1-1 [알고리즘이란?](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap01_basicAlgorithm/A_whatIsAnAlgorithm.java)
+ * 1-2 [반복](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap01_basicAlgorithm/B_repetition.java)
