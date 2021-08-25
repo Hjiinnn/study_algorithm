@@ -219,7 +219,7 @@ public class A_whatIsAnAlgorithm {
 	}
 	
 	/**
-	 * 리스트 1, 2. 마지막 else문을 생략하면 세 가지로 분기하는 것 처럼 보이지만 실제로는 네 가지로 분기하는 것이라고 할 수 있다.
+	 * 리스트 1. 마지막 else문을 생략하면 세 가지로 분기하는 것 처럼 보이지만 실제로는 네 가지로 분기하는 것이라고 할 수 있다.
 	 */
 	public void judgeSign2() {
 		Scanner stdIn = new Scanner(System.in);

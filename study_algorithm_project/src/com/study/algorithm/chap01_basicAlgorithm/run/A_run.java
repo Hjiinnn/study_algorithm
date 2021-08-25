@@ -2,7 +2,7 @@ package com.study.algorithm.chap01_basicAlgorithm.run;
 
 import com.study.algorithm.chap01_basicAlgorithm.A_whatIsAnAlgorithm;
 
-public class A_Run {
+public class A_run {
 	
 	public static void main(String[] args) {
 		
@@ -16,6 +16,8 @@ public class A_Run {
 		//a.outputValueMed3();
 		//a.outputValuesMed3();
 		//a.judgeSign();
-		a.judgeSign2();
+		//a.judgeSign2();
+		
+		
 	}
 }
