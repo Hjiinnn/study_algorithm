@@ -18,6 +18,16 @@ public class A_run {
 		//a.practice3();
 		//a.arrayEquals();
 		//a.practice4();
-		a.practice5();
+		//a.practice5();
+		//a.carconvRev();
+		//a.cardConvRev();
+		//a.practice7();
+		//a.primeNumber1();
+		//a.primeNumber2();
+		//a.primeNumber3();
+		//a.int2dArray();
+		//a.dayOfYear();
+		//a.practice9();
+		a.arraySumForIn();
 	}
 }
