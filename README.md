@@ -9,3 +9,4 @@
  * 1-2 [반복](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap01_basicAlgorithm/B_repetition.java)
 #### 2. 기본 자료구조
  * 2-1 [배열](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap02_basicDataStructure/A_array.java)
+ * 2-2 [클래스](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap02_basicDataStructure/B_class.java)
