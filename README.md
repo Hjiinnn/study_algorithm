@@ -10,3 +10,6 @@
 #### 2. 기본 자료구조
  * 2-1 [배열](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap02_basicDataStructure/A_array.java)
  * 2-2 [클래스](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap02_basicDataStructure/B_class.java)
+#### 3. 검색
+ * 3-1 [검색알고리즘](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap03_search/A_searchAlgorithm.java)
+ * 3-2 [선형 검색](https://github.com/Hjin-Y/study_algorithm/blob/main/study_algorithm_project/src/com/study/algorithm/chap03_search/B_linearSearch.java)
