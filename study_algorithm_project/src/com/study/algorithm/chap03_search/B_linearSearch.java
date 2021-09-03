@@ -113,4 +113,28 @@ public class B_linearSearch {
 		else
 			System.out.println(key + "은(는) x[" + idx + "]에 있습니다.");
 	}
+	
+	/*
+	 * 시간복잡도
+	 * 
+	 * 1. int i = 0;
+	 * 		변수 i에 0을 대입하는 횟수는 처음 한 번 실행한 이후엔 없다. 이렇게 한 번만 실행하는 경우 복잡도는 O(1)로 표기한다.
+	 * 		또한, 메서드에서 값을 반환하는 return i;나 return -1; 도 한 번만 실행되기 때문에 O(1)로 표기한다.
+	 * 2. while(i < n){}
+	 * 3. if(a[i] == key)
+	 * 		배열의 맨 끝에 도달했는지를 판단하는 것과, 현개 검사하고 있는 요소와 찾고자 하는 값이 같은지를 판단하는 것의 평균 실행 횟수는 n/2이다.
+	 * 		이처럼 n에 비례하는 횟수만큼 실행하는 경우의 복잡도를 O(n)으로 표기한다. 
+	 * 		
+	 */
+	static int seqSearchComplexity(int[] a, int n, int key) {
+		
+		int i = 0;
+		while(i < n) {
+			if(a[i] == key) {
+				return i;		// 검색 성공
+			}
+			i++;
+		}
+		return -1;				// 검색 실패
+	}
 }
