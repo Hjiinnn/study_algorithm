@@ -190,4 +190,209 @@ public class C_binarySearch {
 		}
 		return i == n ? -1 : i;
 	}
+	
+	// 이진 검색의 시간 복잡도
+	/*
+	 * O(log n)
+	 */
+	static int binSearch2(int[] a, int n, int key) {
+		int pl = 0; // 검색 범위 맨 앞의 인덱스
+		int pr = n-1; // 검색 범위 맨 끝의 인덱스
+		
+		do {
+			int pc = (pl + pr) / 2; // 중앙 요소의 인덱스
+			if(a[pc] == key) {
+				return pc;
+			}else if(a[pc] < key) {
+				pl = pc + 1;
+			}else {
+				pr = pc - 1;
+			}
+		} while(pl <= pr);
+		
+		return -1; // 검색 실패
+	}
+	
+	// 연습문제3. 요솟수가 n인 배열 a에서 key와 일치하는 모든 요소의 인덱스를 배열 idx의 맨 앞부터 순서대로 저장하고,
+	//			일치한 요솟수를 반환하는 메서드를 작성하세요.
+	//			요솟수가 8인 배열 a의 요소가 {1, 9, 2, 9, 4, 6, 7, 9}이고 key가 9면 배열{1, 3, 7}을 저장하고 3 반환
+	static int searchIdx(int[] a, int n, int key, int[] idx) {
+		
+		int idxN = 0;
+		for(int i=0; i<n; i++) {
+			if(a[i] == key) {
+				idx[idxN++] = i;
+			}
+		}
+		return idxN;
+	}
+	public void practice3() {
+		Scanner sc = new Scanner(System.in);
+		
+		int n;
+		do {
+			System.out.print("요솟수 : ");
+			n = sc.nextInt();			
+		} while(n <= 0);
+		
+		int[] a = new int[n];
+		for(int i=0; i<n; i++) {
+			System.out.print("a[" + i + "] : ");
+			a[i] = sc.nextInt();
+		}
+		
+		int key;
+		do {
+			System.out.print("key : ");
+			key = sc.nextInt();
+		} while(key < 0);
+		
+		int[] idx = new int[n];
+		int result = searchIdx(a, n, key, idx);
+		
+		if(result == 0) {
+			System.out.println("그 값의 요소가 존재하지 않습니다.");
+		}else {
+			for(int i=0; i<result; i++) {
+				System.out.println("그 값은 x[" + idx[i] + "]에 있습니다.");
+			}
+		}
+	}
+	
+	// 연습문제4. 이진 검색의 과정을 자세히 출력하는 프로그램 작성
+	//			각 행의 맨 왼쪽에 현재 검색하고 있는 요소의 인덱스를 출력하고, 
+	//			검색 범위의 맨 앞 요소 위에 <-, 맨 끝 요소 위에 ->, 현재 검색하고 있는 중앙 요소 위에 +를 출력
+	static int prc4(int[] a, int n, int key) {
+		
+		System.out.print("   |");
+		for(int i=0; i<n; i++) {
+			System.out.printf("%4d", i);
+		}
+		System.out.println();
+		
+		System.out.print("---+");
+		for(int i=0; i<n*4; i++) {
+			System.out.print("-");
+		}
+		System.out.println();
+		
+		int pl = 0;
+		int pr = n - 1;
+		
+		do {
+			int pc = (pl + pr) / 2;
+			
+			System.out.print("   |");
+			if(pl != pc) {
+				System.out.printf(String.format("%%%ds<-%%%ds+", (pl * 4) + 1, (pc - pl) * 4), "", "");
+			}else {
+				System.out.printf(String.format("%%%ds<-+", pc * 4 + 1), "");
+			}
+			
+			if(pc != pr) {
+				System.out.printf(String.format("%%%ds->\n", (pr - pc) * 4 - 2), "");
+			}else {
+				System.out.println("->");
+			}
+			
+			System.out.printf("%3d|", pc);
+			
+			for(int i=0; i<n; i++) {
+				System.out.printf("%4d", a[i]);
+			}
+			System.out.println("\n   |");
+
+			if(a[pc] == key) {
+				return pc;
+			}else if(a[pc] < key) {
+				pl = pc + 1;
+			}else {
+				pr = pc - 1;
+			}
+			
+		} while(pl <= pr);
+		
+		return -1;
+	}
+	
+	public void practice4() {
+		Scanner sc = new Scanner(System.in);
+		
+		int n;
+		do {
+			System.out.print("요솟수 : ");
+			n = sc.nextInt();
+		} while(n <= 0);
+		
+		int[] a = new int[n];
+		System.out.print("a[0] : ");
+		a[0] = sc.nextInt();
+		
+		for(int i=1; i<n; i++) {
+			System.out.print("a[" + i + "] : ");
+			a[i] = sc.nextInt();
+		}
+		
+		System.out.print("찾을 값 : ");
+		int key = sc.nextInt();
+		
+		int result = prc4(a, n, key);
+		
+		if(result == -1) {
+			System.out.println("그 값의 요소가 존재하지 않습니다.");	
+		}else {
+			System.out.println("그 값은 a[" + result + "]에 있습니다.");
+		}
+	}
+	
+	// 연습문제5. 이진 검색 알고리즘 프로그램은 검색할 값과 같은 값을 갖는 요소가 하나 이상일 경우 그 요소 중에서 맨 앞의 요소를 찾지 못한다.
+	//			검색에 성공했을 때 그 위치로부터 앞쪽으로 하나씩 검사하면 여러 요소가 일치하는 경우에도 가장 앞쪽에 위치하는 요소의 인덱스를 찾을 수 있다.
+	//			맨 앞의 요소를 찾는 메서드를 작성해 보시요.
+	static int binSearchX(int[] a, int n, int key) {
+		
+		int pl = 0;
+		int pr = n - 1;
+		
+		do {
+			int pc = (pl + pr) / 2;
+				
+			if(a[pc] == key) {
+				for(int i=pc; i>=0; i--) {
+					if(a[i] != key) {
+						return i + 1;
+					}
+				}
+			}else if(a[pc] < key) {
+				pl = pc + 1;
+			}else {
+				pr = pc - 1;
+			}
+			return -1;
+		} while(pl <= pr);
+		
+	}
+	public void practice5() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("요솟수 : ");
+		int n = sc.nextInt();
+		
+		int[] a = new int[n];
+		for(int i=0; i<n; i++) {
+			System.out.print("a[" + i + "] : ");
+			a[i] = sc.nextInt();
+		}
+		
+		System.out.print("찾을 값 : ");
+		int key = sc.nextInt();
+	
+		int result = binSearchX(a, n, key);
+		
+		if(result == -1) {
+			System.out.println("일치하는 값이 없습니다.");
+		}else {
+			System.out.println("a[" + result + "]에 있습니다.");
+		}
+	}
+	
 }

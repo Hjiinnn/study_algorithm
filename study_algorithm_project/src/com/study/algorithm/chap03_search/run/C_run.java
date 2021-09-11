@@ -7,7 +7,10 @@ public class C_run {
 	public static void main(String[] args) {
 		C_binarySearch c = new C_binarySearch();
 		//c.binSearch();
-		c.seqSearchSen();
+		//c.seqSearchSen();
+		//c.practice3();
+		//c.practice4();
+		c.practice5();
 	}
 
 }
