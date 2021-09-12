@@ -10,7 +10,12 @@ public class C_run {
 		//c.seqSearchSen();
 		//c.practice3();
 		//c.practice4();
-		c.practice5();
+		//c.practice5();
+		//c.binarySearchTester();
+		//c.practice6();
+		//c.StringBinarySearch();
+		//c.physExamSearch();
+		c.practice7();
 	}
 
 }
